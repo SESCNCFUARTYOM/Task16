@@ -1,10 +1,17 @@
-def F(n):
-    if n > 2:
-        return F(n-1)+ G(n-2)
-    else:
-        return 1
-def G(n):
-    if n > 2:
-        return G(n-1) + F(n-2)
-    else: return 1
-print(F(8))
+from functools import *
+from sys import *
+
+
+
+a = [1, 1]
+c = 0
+for x in range(2, 1000):
+    
+        a.append(a[x//2] + 1) if x % 2 == 0 else a.append(a[x-3] + 3)
+
+for x in range(len(a)):
+    if a[x] == 31:
+        print(x)
+        break
+
+
